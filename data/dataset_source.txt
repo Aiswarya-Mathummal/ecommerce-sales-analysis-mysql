@@ -1,0 +1,4 @@
+Dataset Source: Kaggle
+
+This project uses a 5,000-row e-commerce dataset sourced from Kaggle.
+The dataset was prepared and structured before being imported into MySQL for analysis.
