@@ -1,4 +1,27 @@
-Dataset Source: Kaggle
+E-Commerce Sales Analysis Dataset
 
-This project uses a 5,000-row e-commerce dataset sourced from Kaggle.
-The dataset was prepared and structured before being imported into MySQL for analysis.
+Source
+
+- The original sales dataset was sourced from Kaggle.
+- The downloaded dataset was used as the starting point for building the database for this project.
+
+Data Preparation
+
+- The original dataset was analyzed and reorganized to identify the different entities involved in the e-commerce business.
+- Customer and order information was separated into dedicated customers and orders tables.
+- Product-related information was separated and organized into a dedicated products table.
+- A separate sellers table was created to represent seller information.
+- Additional data was incorporated where required to make the database more complete for analysis.
+- The data was cleaned and structured to maintain consistency across the tables.
+- Appropriate relationships were established between customers, orders, products, and sellers using their respective IDs.
+- The resulting tables form a connected relational e-commerce database suitable for SQL analysis.
+
+Final Dataset
+
+- Customers: Customer information including name, signup date, and city.
+- Orders: Order information including order date, product, quantity, price, total amount, order status, payment method, and city.
+- Products: Product information including product name, category, unit price, and seller.
+- Sellers: Seller information including seller name and city.
+- Orders: 10,000 records.
+
+
