@@ -2,42 +2,73 @@
 -- Intermediate — JOINs, GROUP BY, HAVING, Aggregates 
 -- ------------------------------------------------------------------------------------------------------------------
 
--- 1. What is the total revenue generated so far? 
-select sum(total_amount) as total_revenue from orders;
+
+-- 1. How many customers are there in each city?
+select city,count(*) as customer_count from customers
+group by city order by customer_count desc;
+
+-- ------------------------------------------------------------------------------------------------------------------
+-- 2. What is the total revenue for each city?
+select city,sum(total_amount) as total_revenue from orders
+group by city order by total_revenue desc;
 
 -- ------------------------------------------------------------------------------------------------------------------
 
--- 2. Which product category has sold the most units? 
-select category,sum(quantity) as total_count from orders 
-group by category order by total_count desc limit 1;
+-- 3. Which product category generated the highest revenue?
+select p.category,sum(o.total_amount) as highest_revenue 
+from orders o join products p on o.product_id = p. product_id
+group by p.category order by highest_revenue desc limit 1;
 
 -- ------------------------------------------------------------------------------------------------------------------
 
--- 3. List the top 5 customers by total amount spent. 
-select o.customer_id, c.first_name,c.last_name,c.country,sum(o.total_amount) as total_spend 
-from customers c join orders o on c.customer_id = o.customer_id 
-group by o.customer_id 
-order by total_spend desc 
-limit 5;
+-- 4. What is the average unit price for each product category?
+select category,avg(unit_price) as avg_price from products
+group by category order by avg_price desc;
+
+--  ------------------------------------------------------------------------------------------------------------------
+
+-- 5. Which customers have spent more than ₹50,000 in total?
+select c.customer_id,c.first_name,c.last_name,sum(o.total_amount) as total_spend 
+from customers c join orders o on c.customer_id = o.customer_id
+group by  customer_id having total_spend > 50000 
+order by total_spend desc;
 
 -- ------------------------------------------------------------------------------------------------------------------
 
--- 4. Which sellers have generated more than a set revenue threshold? (HAVING) 
-select seller_id,sum(total_amount) as total_revenue from orders 
-group by seller_id 
-having total_revenue > 25000 
-order by total_revenue desc  ;
+-- 6. How many units of each product have been sold?
+select p.category,p.product_name,sum(o.quantity) as total_units_sold
+from orders o join products p on o.product_id = p.product_id
+group by p.category,p.product_name order by total_units_sold desc;
 
 -- ------------------------------------------------------------------------------------------------------------------
 
--- 5. What is the average order value per country? 
-select country,avg(total_amount) as avg_amount from orders group by country order by country;
+-- 7. Which sellers have sold more than 100 units in total?
+select p.seller_id,s.seller_name,sum(o.quantity) as total_units_sold 
+from sellers s 
+join products p on p.seller_id = s.seller_id
+join orders o on p.product_id = o.product_id  
+group by p.seller_id,s.seller_name
+having total_units_sold > 100
+order by total_units_sold desc;
 
 -- ------------------------------------------------------------------------------------------------------------------
 
--- 6. How many orders did each payment type handle, and what's the average payment value per type? 
-select payment_method,count(*) as total_count,avg(total_amount) as avg_amount from orders 
-group by payment_method
-order by total_count desc;
+-- 8. What is the minimum, maximum, and average order value for each payment method?
+select payment_method,min(total_amount) as minimum_order_value,
+max(total_amount) as maximum_order_value,avg(total_amount)as average_order_value
+from orders group by payment_method order by payment_method;
+
+-- ------------------------------------------------------------------------------------------------------------------
+
+-- 9. Which product has generated the highest revenue?
+select p.product_name,sum(o.total_amount) as highest_revenue
+from products p join orders o on p.product_id = o.product_id
+group by p.product_name order by highest_revenue desc limit 1;
+
+-- ------------------------------------------------------------------------------------------------------------------
+
+-- 10. Which cities have placed more than 500 orders?
+select city,count(*) as total_orders from orders
+group by city having total_orders > 500 order by total_orders desc ;
 
 -- ------------------------------------------------------------------------------------------------------------------
