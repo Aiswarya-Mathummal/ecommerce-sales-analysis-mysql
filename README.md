@@ -28,7 +28,6 @@ sellers – seller details
 
 ## EER Diagram
 
-(screenshots/EER.jpg)
 <img width="679" height="456" alt="EER" src="https://github.com/user-attachments/assets/e20a1012-a1f0-4818-be00-24b82f654012" />
 
 
