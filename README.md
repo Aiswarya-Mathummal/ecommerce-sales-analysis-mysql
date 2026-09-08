@@ -164,22 +164,18 @@ I also gained practical experience with subqueries, CTEs, window functions, view
 ecommerce-sales-analysis-mysql/
 │
 ├── README.md
-│
 ├── schema/
 │   └── create_tables.sql
-│
 ├── data/
 │   └── dataset_source.txt
-│
 ├── queries/
 │   └── 01_beginner_questions.sql
 |   └── 02_intermediate_questions.sql
 |   └── 03_advanced_questions.sql
-│
 └── screenshots/
     ├── db_cst.jpg
     ├── ord_prd_slr.jpg
-    ├── eer.jpg
+    ├── EER.jpg
     ├── beg1.jpg
     ├── int1.jpg
     └── adv1.jpg 
