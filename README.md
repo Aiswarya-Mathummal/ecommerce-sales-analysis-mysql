@@ -155,39 +155,38 @@ where total_revenue > (
 
 ## What I Learned
 
-This project helped me strengthen my SQL skills by solving business-related questions using e-commerce data. I practiced working with relational tables and using JOINs to combine customer, order, product, and seller information.
+This project helped me strengthen my SQL skills by solving business-related questions using ecommerce data. I practiced working with relational tables and using JOINs to combine customer, order, product, and seller information.
 
 I also gained practical experience with subqueries, CTEs, window functions, views, and stored procedures for more advanced data analysis.
 
 ## Project Structure
 
 ecommerce-sales-analysis-mysql/
-│
-├── README.md
-├── schema/
-│   └── create_tables.sql
-├── data/
-│   └── dataset_source.txt
-├── queries/
-│   └── 01_beginner_questions.sql
-|   └── 02_intermediate_questions.sql
-|   └── 03_advanced_questions.sql
-└── screenshots/
-    ├── db_cst.jpg
-    ├── ord_prd_slr.jpg
-    ├── EER.jpg
-    ├── beg1.jpg
-    ├── int1.jpg
-    └── adv1.jpg 
-    └── . 
-    └── . 
-    └── . 
+README.md
+schema/
+       create_tables.sql
+data/
+       dataset_source.txt
+queries/
+       01_beginner_questions.sql
+       02_intermediate_questions.sql
+       03_advanced_questions.sql
+screenshots/
+       db_cst.jpg
+       ord_prd_slr.jpg
+       EER.jpg
+       beg1.jpg
+       int1.jpg
+       adv1.jpg 
+       . 
+       . 
+       . 
 
 ## Tools Used
 
-* MySQL
-* MySQL Workbench
-* SQL
+. MySQL
+. MySQL Workbench
+. SQL
 
 ## Project Status
 
