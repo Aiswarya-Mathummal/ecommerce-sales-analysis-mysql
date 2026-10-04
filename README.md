@@ -4,9 +4,9 @@ E-commerce sales analysis project using MySQL to explore customer, order, produc
 
 ## Project Overview
 
-This project analyzes e-commerce sales data using MySQL. The dataset was obtained from Kaggle and structured into four relational tables — customers, orders, products, and sellers — before performing SQL analysis.
+This project analyzes ecommerce sales data using MySQL. The dataset was obtained from Kaggle and structured into four relational tables - customers, orders, products, and sellers before performing SQL analysis.
 
-The project includes beginner, intermediate, and advanced SQL queries to answer business-related questions about customers, orders, products, and sellers.
+The project includes beginner, intermediate, and advanced SQL queries to answer business related questions about customers, orders, products, and sellers.
 
 ## Dataset
 
